@@ -1,11 +1,11 @@
-package com.boot.my.thumbsup.controller;
+package com.boot.my.thumbsup.domains.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.boot.my.thumbsup.service.MemberService;
+import com.boot.my.thumbsup.domains.service.MemberService;
 
 //메인 컨트롤러, RestController 어노테이션 ?
 

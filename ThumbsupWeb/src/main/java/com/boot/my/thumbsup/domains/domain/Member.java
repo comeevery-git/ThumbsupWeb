@@ -1,4 +1,4 @@
-package com.boot.my.thumbsup.vo;
+package com.boot.my.thumbsup.domains.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

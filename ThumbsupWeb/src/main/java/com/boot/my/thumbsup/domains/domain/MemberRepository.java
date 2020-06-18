@@ -1,8 +1,6 @@
-package com.boot.my.thumbsup.repository;
+package com.boot.my.thumbsup.domains.domain;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import com.boot.my.thumbsup.vo.Member;
 
 //하나의 테이블이라고 생각하면 편함
 //CrudRepository 인터페이스를 상속받아
