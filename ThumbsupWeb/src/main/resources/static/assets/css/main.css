@@ -1242,7 +1242,8 @@
 			display: -ms-flexbox;
 			-ms-flex-align: center;
 			-ms-flex-pack: center;
-			background: #e74c3c;
+			/* 2020-06-23 main color change */
+			background: #D6596F;
 			border-radius: 100%;
 			width: 35em;
 			height: 35em;
@@ -1412,7 +1413,7 @@
 			display: inline-block;
 			text-decoration: none;
 			border-radius: 50% 50% 0 0;
-			background: #e74c3c;
+			background: #D6596F;
 			width: 3em;
 			height: 3em;
 			margin-bottom: -1.75em;
@@ -1443,7 +1444,8 @@
 			-ms-flex-pack: center;
 			position: relative;
 			z-index: 10003;
-			background: #e74c3c;
+			/* 2020-06-23 main color change */
+			background: #D6596F;
 			padding: 2em;
 			height: 20em;
 		}

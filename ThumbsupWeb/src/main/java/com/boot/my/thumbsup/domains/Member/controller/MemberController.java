@@ -12,13 +12,36 @@ public class MemberController {
 	 * @Autowired private MemberService memberService;
 	 */
 	@Controller
+	@RequestMapping("/index_login")
+	public class IndexLoginController {
+		@RequestMapping(method=RequestMethod.GET) public String index() {
+			return "index_login";
+		}
+	}
+	
+	@Controller
 	@RequestMapping("/index")
-	public class HelloController {
+	public class Index {
 		@RequestMapping(method=RequestMethod.GET) public String index() {
 			return "index";
 		}
 	}
 	
+	@Controller
+	@RequestMapping("/detail1")
+	public class detail1 {
+		@RequestMapping(method=RequestMethod.GET) public String index() {
+			return "detail1";
+		}
+	}
+	
+	@Controller
+	@RequestMapping("/detail2")
+	public class detail2 {
+		@RequestMapping(method=RequestMethod.GET) public String index() {
+			return "detail2";
+		}
+	}
 /*
 	@GetMapping(path="/add")
 	public @ResponseBody String addNewUser (@RequestParam String name,

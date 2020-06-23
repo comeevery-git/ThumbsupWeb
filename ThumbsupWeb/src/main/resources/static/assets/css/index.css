@@ -1,0 +1,108 @@
+@import url(font-awesome.min.css);
+@import url(https://fonts.googleapis.com/css?family=Pattaya|Work+Sans:400,200,300);
+
+/*
+	Radius by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+*/
+/* FONT EX */
+/* 폰트 예시
+body {
+	font-family: 'Balsamiq Sans', cursive;
+	font-family: 'Do Hyeon', sans-serif;
+	font-family: 'Gugi', cursive;
+		타이틀 폰트
+	font-family: 'Black Han Sans', sans-serif;
+		기본 폰트
+	font-family: 'Jua', sans-serif;
+	font-family: 'Nanum Gothic Coding', monospace;
+}
+*/
+
+/**/
+/* 로그인 폼 */
+form#login_form {
+	margin: unset;	
+}
+/* 로그인 */
+#login_div h2{
+	display: flex;
+	line-height: 3vh;
+    margin: 0 0 0.5em -1rem !important;
+}
+input#userId, input#userPwd {
+	border: unset;
+	padding: unset;
+	padding-left: 0.5rem;
+    padding-right: 0.5rem;
+	position: relative;
+    left: 1rem;
+    width: 24vh;
+    height: 2rem;
+    background-color: #ffffff21;
+}
+input#userId:focus, input#userPwd:focus {
+	font-size: 1.2rem;
+	box-shadow: unset;
+}
+/* 로그인 버튼 */
+button#login_btn {
+    padding-left: 2em;
+    padding-right: 2em;
+    border-radius: 30px;
+    color: #d6596f;
+    background-color: white;
+    font-family: 'Jua', sans-serif;
+    font-weight: 300;
+	font-size: 2.3vh;
+    outline: none;
+    margin-bottom: -1rem;
+    margin-left: 6.5vh;
+}
+/* 로그인 창 숨김 */
+a#goSmall {
+    padding: unset !important;
+    background-color: unset !important;
+}
+/* 로그인 창 숨김 아이콘 */
+a#goSmall img{
+    width: auto;
+    height: auto;
+    max-width: 2rem;
+    max-height: 2rem;
+    position: relative;
+    top: 1.5vh;
+    margin-left: 3px;
+}
+
+
+/**/
+/* 검색 영역 */
+div#search_wrap {
+	padding-top: 2vh;
+    border-bottom: 2px solid #d6596f;
+    border-radius: 0.5vh;
+}
+div#search_div {
+    display: flex;
+}
+/* 검색 키워드 */
+#keyword {
+	border: unset;
+    background-color: unset;
+    font-size: 1rem;
+	font-family: 'Jua', sans-serif;
+    outline: none;
+}
+#keyword:focus {
+	box-shadow: unset;
+}
+/* 검색 아이콘 */
+#search_icon {
+    width: auto;
+    height: auto;
+    max-width: 3rem;
+    max-height: 3rem;
+    padding-right: 2px;
+}

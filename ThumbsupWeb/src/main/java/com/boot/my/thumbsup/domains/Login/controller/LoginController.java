@@ -2,11 +2,23 @@ package com.boot.my.thumbsup.domains.Login.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("/login")
@@ -19,13 +31,13 @@ public class LoginController {
 
 	
 	/*
-	 * 직원 로그인
+	 * 회원 로그인
 	 */
     @GetMapping("/login")
     public String login(Model model) {
     	return "index";
     }
-  /*
+
     @PostMapping(value="/userLogin")
     @ResponseBody
     public ModelAndView LoginAPI(
@@ -39,18 +51,18 @@ public class LoginController {
     		) {
     	String responseDtl = null;
 
-    	System.out.println("admin --- msg@@@@@@@@@@@@@@@@@ : "+msg);
-    	System.out.println("admin --- id : "+id);
-    	System.out.println("admin --- pwd : "+pwd);
+    	System.out.println("member --- msg@@@@@@@@@@@@@@@@@ : "+msg);
+    	System.out.println("member --- id : "+id);
+    	System.out.println("member --- pwd : "+pwd);
     	
-    	System.out.println("admin --- Login, API로 요청");
+    	System.out.println("member --- Login, API로 요청");
     	// API 데이터 요청 및 응답
 		try {
 			HttpHeaders headers = new HttpHeaders();
 			//Charset utf8 = Charset.forName("UTF-8");
 			//MediaType mediaType = new MediaType("application","json",utf8);
 			//headers.setContentType(mediaType);
-			System.out.println("admin --- #headers# "+headers);
+			System.out.println("member --- #headers# "+headers);
 	
 			//요청 url
 			url = "http://localhost:8007/service/auth";
@@ -60,7 +72,7 @@ public class LoginController {
 			map.add("pwd", pwd);
 
 			HttpEntity<MultiValueMap<String,String>> entity = new HttpEntity<MultiValueMap<String, String>>(map, headers);
-			System.out.println("admin --- #entity# "+entity);
+			System.out.println("member --- #entity# "+entity);
 			//ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.POST, entity, String.class);
 			ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.POST, entity, String.class);
 			//response
@@ -74,8 +86,9 @@ public class LoginController {
 			
 			// 요청에 대한 데이터 실패값 : no_data
 			if(responseDtl.equals("no_data")) {
-				mv.addObject("msg","아이디 또는 비밀번호를 확인해주세요.");
-				mv.setViewName("login/admin_login");
+				redirectAttributes.addFlashAttribute( "msg", "아이디 또는 비밀번호를 확인해주세요." );
+				return new ModelAndView("redirect:/index");
+				
 			} else {
 				redirectAttributes.addFlashAttribute( "token", responseDtl );
 				redirectAttributes.addFlashAttribute( "msg", "어서오세요 !" );
@@ -92,7 +105,7 @@ public class LoginController {
     	return mv;
     	
     }
-    */
+    
     
     
     

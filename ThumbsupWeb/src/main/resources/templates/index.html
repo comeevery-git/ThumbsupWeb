@@ -6,117 +6,110 @@
 -->
 <html>
 	<head>
-		<title>Radius by TEMPLATED</title>
+		<title>Thumbs up!</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="resources/assets/css/main.css" />
-	</head>
-	<body>
+		<link rel="stylesheet" href="resources/assets/css/index.css" />
+	
+<script th:inline="javascript">
+/*<![CDATA[*/
+var msg = [[${msg}]];
+if(msg != null) alert(msg);
+
+var token = [[${token}]];
+if(token != null) localStorage.setItem("token",token);
+//alert(localStorage.getItem("token"));
+/*]]>*/
+
+//로그인 창 숨김 or 보여줌
+function loginBtnNone(){
+	var btn = document.getElementById("login_btn")
+	if(btn.style.display == "none"){
+		btn.style.display = '';
+	} else {
+		btn.style.display = 'none';
+	}
+}
+</script>
+</head>
+<body>
 
 		<!-- Header -->
-			<header id="header">
-				<div class="inner">
-					<div class="content">
-						<h1>Radius</h1>
-						<h2>A fully responsive masonry-style<br />
-						portfolio template.</h2>
-						<a href="#" class="button big alt"><span>Let's Go</span></a>
-					</div>
-					<a href="#" class="button hidden"><span>Let's Go</span></a>
+		<header id="header">
+			<div class="inner">
+				<div class="content">
+					<h1>Thumbs up!</h1>
+					  <form th:action="@{/login/userLogin}" action="#" id="login_form" method="POST" onsubmit="return loginChk()">
+						<div id="login_div" class="col-md-12 col-sm-12 col-xs-12">
+							<h2>ID&nbsp;&nbsp;&nbsp;&nbsp;<input type="email" name="id" id="userId" value="" /></h2>
+						</div>
+						<div id="login_div" class="col-md-12 col-sm-12 col-xs-12">
+							<h2>PWD<input type="password" name="pwd" id="userPwd" value="" /></h2>
+						</div>
+						<button id="login_btn" type="submit"><span>Login</span></button>
+						<!-- 누르면 작아지는 버튼 -->
+						<a id="goSmall" href="#" class="button big alt" onclick="loginBtnNone()">
+							<img id="search_icon" src="resources/assets/icon/icons8-shutdown-40.png"/>
+						</a>
+					</form>
 				</div>
-			</header>
+				<!-- 작아진 버튼 -->
+				<a href="#" class="button hidden" onclick="loginBtnNone()"><span>Let's Go</span></a>
+			</div>
+		</header>
 
 		<!-- Main -->
-			<div id="main">
-				<div class="inner">
-					<div class="columns">
-
-						<!-- Column 1 (horizontal, vertical, horizontal, vertical) -->
-							<div class="image fit">
-								<a href="detail1.html"><img src="resources/images/pic01.jpg" alt="" /></a>
-							</div>
-							<div class="image fit">
-								<a href="detail1.html"><img src="resources/images/pic02.jpg" alt="" /></a>
-							</div>
-							<div class="image fit">
-								<a href="detail1.html"><img src="resources/images/pic03.jpg" alt="" /></a>
-							</div>
-							<div class="image fit">
-								<a href="detail1.html"><img src="resources/images/pic04.jpg" alt="" /></a>
-							</div>
-
-						<!-- Column 2 (vertical, horizontal, vertical, horizontal) -->
-							<div class="image fit">
-								<a href="detail1.html"><img src="resources/images/pic06.jpg" alt="" /></a>
-							</div>
-							<div class="image fit">
-								<a href="detail1.html"><img src="resources/images/pic05.jpg" alt="" /></a>
-							</div>
-							<div class="image fit">
-								<a href="detail1.html"><img src="resources/images/pic08.jpg" alt="" /></a>
-							</div>
-							<div class="image fit">
-								<a href="detail1.html"><img src="resources/images/pic07.jpg" alt="" /></a>
-							</div>
-
-						<!-- Column 3 (horizontal, vertical, horizontal, vertical) -->
-							<div class="image fit">
-								<a href="detail1.html"><img src="resources/images/pic09.jpg" alt="" /></a>
-							</div>
-							<div class="image fit">
-								<a href="detail1.html"><img src="resources/images/pic12.jpg" alt="" /></a>
-							</div>
-							<div class="image fit">
-								<a href="detail1.html"><img src="resources/images/pic11.jpg" alt="" /></a>
-							</div>
-							<div class="image fit">
-								<a href="detail1.html"><img src="resources/images/pic10.jpg" alt="" /></a>
-							</div>
-
-						<!-- Column 4 (vertical, horizontal, vertical, horizontal) -->
-							<div class="image fit">
-								<a href="detail1.html"><img src="resources/images/pic13.jpg" alt="" /></a>
-							</div>
-							<div class="image fit">
-								<a href="detail1.html"><img src="resources/images/pic14.jpg" alt="" /></a>
-							</div>
-							<div class="image fit">
-								<a href="detail1.html"><img src="resources/images/pic15.jpg" alt="" /></a>
-							</div>
-							<div class="image fit">
-								<a href="detail1.html"><img src="resources/images/pic16.jpg" alt="" /></a>
-							</div>
-
+		<!-- 검색영역 -->
+		<div id="main">
+			<div class="inner">
+				<div id="search_wrap" class="col-md-12 col-sm-12 col-xs-12">
+					<div id="search_div">
+						<input type="text" id="keyword" value="" />
+						<img id="search_icon" src="resources/assets/icon/icons8-search-64.png" />
 					</div>
 				</div>
 			</div>
+		</div>
+		
+		<!-- 검색 필터영역 -->
+		<div id="filter_wrap" class="col-md-12 col-sm-12 col-xs-12">
+			Filters......
+		
+		</div>
+		
+		<!-- 검색 내용영역 -->
+		<div id="filter_wrap" class="col-md-12 col-sm-12 col-xs-12">
+			Contents.........
+		
+		</div>
 
 		<!-- Footer -->
-			<footer id="footer">
-				<a href="#" class="info fa fa-info-circle"><span>About</span></a>
-				<div class="inner">
-					<div class="content">
-						<h3>Vestibulum hendrerit tortor id gravida</h3>
-						<p>In tempor porttitor nisl non elementum. Nulla ipsum ipsum, feugiat vitae vehicula vitae, imperdiet sed risus. Fusce sed dictum neque, id auctor felis. Praesent luctus sagittis viverra. Nulla erat nibh, fermentum quis enim ac, ultrices euismod augue. Proin ligula nibh, pretium at enim eget, tempor feugiat nulla.</p>
-					</div>
-					<div class="copyright">
-						<h3>Follow me</h3>
-						<ul class="icons">
-							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-						</ul>
-						&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com/">Unsplash</a>.
-					</div>
+		<footer id="footer">
+			<a href="#" class="info fa fa-info-circle"><span>About</span></a>
+			<div class="inner">
+				<div class="content">
+					<h3>Vestibulum hendrerit tortor id gravida</h3>
+					<p>In tempor porttitor nisl non elementum. Nulla ipsum ipsum, feugiat vitae vehicula vitae, imperdiet sed risus. Fusce sed dictum neque, id auctor felis. Praesent luctus sagittis viverra. Nulla erat nibh, fermentum quis enim ac, ultrices euismod augue. Proin ligula nibh, pretium at enim eget, tempor feugiat nulla.</p>
 				</div>
-			</footer>
+				<div class="copyright">
+					<h3>Follow me</h3>
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+					</ul>
+					&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>. Images: <a href="https://unsplash.com/">Unsplash</a>.
+				</div>
+			</div>
+		</footer>
 
-		<!-- Scripts -->
-			<script src="resources/assets/js/jquery.min.js"></script>
-			<script src="resources/assets/js/skel.min.js"></script>
-			<script src="resources/assets/js/util.js"></script>
-			<script src="resources/assets/js/main.js"></script>
+	<!-- Scripts -->
+	<script src="resources/assets/js/jquery.min.js"></script>
+	<script src="resources/assets/js/skel.min.js"></script>
+	<script src="resources/assets/js/util.js"></script>
+	<script src="resources/assets/js/main.js"></script>
 
-	</body>
+</body>
 </html>
