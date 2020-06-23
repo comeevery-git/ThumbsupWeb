@@ -1,4 +1,4 @@
-package com.boot.my.thumbsup.domains.domain;
+package com.boot.my.thumbsup.domains.Member.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,17 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-
 
 @Entity
-@Getter
-@Setter
-@Builder
-@AllArgsConstructor
 @Table(name = "tb_member")
 public class Member {
  

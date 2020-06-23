@@ -76,23 +76,12 @@
 			<artifactId>mariadb-java-client</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-<!--         <dependency>
+        <dependency>
                <groupId>org.projectlombok</groupId>
                <artifactId>lombok</artifactId>
                <optional>true</optional>
-        </dependency> -->
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>1.16.20</version>
-			<scope>provided</scope>
-		</dependency>
-        <dependency>
-        <groupId>org.jadira.usertype</groupId>
-        <artifactId>usertype.core</artifactId>
-        <version>5.0.0.GA</version>
-    </dependency>
-    
+        </dependency>
+        
         <!-- Query console 표시 -->
         <dependency>
 		    <groupId>org.bgee.log4jdbc-log4j2</groupId>
@@ -125,7 +114,12 @@
 			<version>3.3.1</version>
 		</dependency>
 
-
+		<!-- JWT Token auth0 -->
+		<dependency>
+	        <groupId>io.jsonwebtoken</groupId>
+	        <artifactId>jjwt</artifactId>
+	        <version>0.9.1</version>
+		</dependency>
 	</dependencies>
 
 

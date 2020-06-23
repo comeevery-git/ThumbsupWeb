@@ -1,4 +1,4 @@
-package com.boot.my.thumbsup.domains.domain;
+package com.boot.my.thumbsup.domains.Member.domain;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
