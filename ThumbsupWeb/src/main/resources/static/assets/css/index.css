@@ -25,13 +25,18 @@ body {
 form#login_form {
 	margin: unset;	
 }
+/* 회원가입 폼 */
+form#register_form {
+	display: none;
+}
 /* 로그인 */
 #login_div h2{
 	display: flex;
 	line-height: 3vh;
     margin: 0 0 0.5em -1rem !important;
 }
-input#userId, input#userPwd {
+/* 로그인, 회원가입 input */
+input#userId, input#userPwd, input#userId_reg, input#userPwd_reg, #userName, #userRrno, #userGender {
 	border: unset;
 	padding: unset;
 	padding-left: 0.5rem;
@@ -42,12 +47,12 @@ input#userId, input#userPwd {
     height: 2rem;
     background-color: #ffffff21;
 }
-input#userId:focus, input#userPwd:focus {
-	font-size: 1.2rem;
+input#userId:focus, input#userPwd:focus, input#userId_reg:focus, input#userPwd_reg:focus, #userName:focus, #userRrno:focus, #userGender:focus {
+	font-size: 1rem;
 	box-shadow: unset;
 }
-/* 로그인 버튼 */
-button#login_btn {
+/* 로그인 버튼, 회원가입 버튼 */
+button#login_btn, #register_btn {
     padding-left: 2em;
     padding-right: 2em;
     border-radius: 30px;
@@ -58,7 +63,6 @@ button#login_btn {
 	font-size: 2.3vh;
     outline: none;
     margin-bottom: -1rem;
-    margin-left: 6.5vh;
 }
 /* 로그인 창 숨김 */
 a#goSmall {
@@ -68,6 +72,26 @@ a#goSmall {
 /* 로그인 창 숨김 아이콘 */
 a#goSmall img{
     width: auto;
+    height: auto;
+    max-width: 2rem;
+    max-height: 2rem;
+    position: relative;
+    top: 1.5vh;
+    margin-left: 3px;
+}
+/* 회원가입 폼으로 이동 아이콘 */
+a#goRegister img{
+    width: auto;
+    height: auto;
+    max-width: 2rem;
+    max-height: 2rem;
+    position: relative;
+    top: 1.5vh;
+    margin-left: 3px;
+}
+/* 로그인폼으로 돌아가기 버튼 아이콘 */
+a#goLogin img {
+	width: auto;
     height: auto;
     max-width: 2rem;
     max-height: 2rem;
