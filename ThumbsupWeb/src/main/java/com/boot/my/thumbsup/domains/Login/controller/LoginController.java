@@ -35,7 +35,7 @@ public class LoginController {
 	 */
     @GetMapping("/login")
     public String login(Model model) {
-    	return "index";
+    	return "main";
     }
     @PostMapping(value="/userLogin")
     @ResponseBody

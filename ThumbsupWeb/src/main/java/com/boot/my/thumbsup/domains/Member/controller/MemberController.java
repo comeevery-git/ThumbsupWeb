@@ -26,6 +26,28 @@ public class MemberController {
 			return "index";
 		}
 	}
+	@Controller
+	@RequestMapping("/first")
+	public class first {
+		@RequestMapping(method=RequestMethod.GET) public String index() {
+			return "first";
+		}
+	}
+	@Controller
+	@RequestMapping("/elements")
+	public class elements {
+		@RequestMapping(method=RequestMethod.GET) public String index() {
+			return "elements";
+		}
+	}
+	@Controller
+	@RequestMapping("/generic")
+	public class generic {
+		@RequestMapping(method=RequestMethod.GET) public String index() {
+			return "generic";
+		}
+	}
+	
 	
 	@Controller
 	@RequestMapping("/detail1")

@@ -1,4 +1,4 @@
-package com.boot.my.MyProject;
+package com.boot.my.thumbsup;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
