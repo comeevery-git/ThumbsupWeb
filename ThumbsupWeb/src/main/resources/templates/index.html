@@ -27,23 +27,23 @@
 										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
 										 -->
-										 <!-- 회원가입 -->
-										<li>
-											<a href="#">
-												<img id="iconCustom" src="resources/assets/icon/icons8-add-user-64.png"/>
-											</a>
-										</li>
 										<!-- 돌아가기
 										<li>
 											<a href="#">
-												<img id="iconCustom" src="resources/assets/icon/icons8-loginleft-rounded-left-50.png"/>
+												<img class="iconCustom" src="resources/assets/icon/icons8-loginleft-rounded-left-50.png"/>
 											</a>
 										</li>
 										 -->
+										<!-- 회원가입 -->
+										<li>
+											<a href="#">
+												<img id="register_btn" class="iconCustom" src="resources/assets/icon/icons8-add-user-64.png"/>
+											</a>
+										</li>
 										<!-- 로그인 -->
 										<li>
 											<a href="#">
-												<button id="login_btn" type="submit"><span>Login</span></button>
+												<button id="login_btn"><span>Login</span></button>
 											</a>
 										</li>
 										<!-- 로그아웃
@@ -55,54 +55,49 @@
 										 -->
 									</ul>
 								</header>
-
-							<!-- Banner
-								<section id="banner">
-									<div class="content">
-							 -->		
-			<!-- 로그인 버튼 클릭 시
-			<div class="inner" id="innder_contentsBox">
-				<div class="content">
-					  <form th:action="@{/login/userLogin}" action="#" id="login_form" method="POST" onsubmit="return loginChk()" style="display:block;">
-						<div id="login_div" class="col-md-12 col-sm-12 col-xs-12">
-							<h2>ID&nbsp;&nbsp;&nbsp;&nbsp;<input type="email" name="id" id="userId" value="" /></h2>
-						</div>
-						<div id="login_div" class="col-md-12 col-sm-12 col-xs-12">
-							<h2>PWD<input type="password" name="pwd" id="userPwd" value="" /></h2>
-						</div>
-					</form>
-					
-				 <!-- 회원가입 버튼 클릭 시
-					 <form th:action="@{/login/userRegister}" action="#" id="register_form" method="POST" onsubmit="return registerChk()">
-						<div id="login_div" class="col-md-12 col-sm-12 col-xs-12">
-							<h2>ID&nbsp;&nbsp;&nbsp;&nbsp;<input type="email" name="id_reg" id="userId_reg" value="" /></h2>
-						</div>
-						<div id="login_div" class="col-md-12 col-sm-12 col-xs-12">
-							<h2>PWD<input type="password" name="pwd_reg" id="userPwd_reg" value="" /></h2>
-						</div>
-						<div id="login_div" class="col-md-12 col-sm-12 col-xs-12">
-							<h2>닉네임<input type="text" name="name" id="userName" value="" /></h2>
-						</div>
-						<div id="login_div" class="col-md-12 col-sm-12 col-xs-12">
-							<h2>생년월일<input type="text" name="rrno" id="userRrno" value="" /></h2>
-						</div>
-						<div id="login_div" class="col-md-12 col-sm-12 col-xs-12">
-							<h2>성별<input type="text" name="gender" id="userGender" value="" /></h2>
-						</div>
-						<button id="register_btn" type="submit"><span>Register</span></button>
-						<!-- 누르면 로그인 폼으로 변경되는 버튼
-						<a id="goLogin" onclick="loginBtnNone(this.id)">
-							<img src="resources/assets/icon/icons8-loginleft-rounded-left-50.png"/>
-						</a>
-					</form>
-				 -->
-				<!-- 
-				</div>
-			</div>
-				 
-									</div>
-								</section>
-				 -->
+								
+							    <!-- The Modal (Login) -->
+							    <div id="myLoginModal" class="modal">
+							      <!-- Modal content -->
+							      <div class="modal-content">
+							        <span class="close">&times;</span>                                                               
+								    <form th:action="@{/login/userLogin}" action="#" id="login_form" method="POST" onsubmit="return loginChk()" style="display:block;">
+										<div id="login_div" class="col-md-12 col-sm-12 col-xs-12">
+											<h2>ID&nbsp;&nbsp;&nbsp;&nbsp;<input type="email" name="id" id="userId" value="" /></h2>
+										</div>
+										<div id="login_div" class="col-md-12 col-sm-12 col-xs-12">
+											<h2>PWD<input type="password" name="pwd" id="userPwd" value="" /></h2>
+										</div>
+									</form>
+							      </div>
+							    </div>
+							
+							    <!-- The Modal (Register) -->
+							    <div id="myRegisterModal" class="modal">
+							      <!-- Modal content -->
+							      <div class="modal-content">
+							        <span class="close">&times;</span>                                                               
+									<form th:action="@{/login/userRegister}" action="#" id="register_form" method="POST" onsubmit="return registerChk()">
+										<div id="login_div" class="col-md-12 col-sm-12 col-xs-12">
+											<h2>ID&nbsp;&nbsp;&nbsp;&nbsp;<input type="email" name="id_reg" id="userId_reg" value="" /></h2>
+										</div>
+										<div id="login_div" class="col-md-12 col-sm-12 col-xs-12">
+											<h2>PWD<input type="password" name="pwd_reg" id="userPwd_reg" value="" /></h2>
+										</div>
+										<div id="login_div" class="col-md-12 col-sm-12 col-xs-12">
+											<h2>닉네임<input type="text" name="name" id="userName" value="" /></h2>
+										</div>
+										<div id="login_div" class="col-md-12 col-sm-12 col-xs-12">
+											<h2>생년월일<input type="text" name="rrno" id="userRrno" value="" /></h2>
+										</div>
+										<div id="login_div" class="col-md-12 col-sm-12 col-xs-12">
+											<h2>성별<input type="text" name="gender" id="userGender" value="" /></h2>
+										</div>
+										<button id="register_btn" type="submit"><span>Register</span></button>
+									</form>
+							      </div>
+							    </div> 
+    
 							<!-- Search -->
 							<section id="search" class="alt">
 								<form method="post" action="#">
