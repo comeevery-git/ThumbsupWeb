@@ -42,8 +42,8 @@ public class LoginController {
     public ModelAndView LoginAPI(
     			ModelAndView mv,
     			String url,
-    			String id,
-    			String pwd,
+    			String mbId,
+    			String mbPwd,
     			RestTemplate restTemplate,
     			RedirectAttributes redirectAttributes,
     			@RequestBody String msg
@@ -51,8 +51,8 @@ public class LoginController {
     	String responseDtl = null;
 
     	System.out.println("member --- msg@@@@@@@@@@@@@@@@@ : "+msg);
-    	System.out.println("member --- id : "+id);
-    	System.out.println("member --- pwd : "+pwd);
+    	System.out.println("member --- mbId : "+mbId);
+    	System.out.println("member --- mbPwd : "+mbPwd);
     	
     	System.out.println("member --- Login, API로 요청");
     	// API 데이터 요청 및 응답
@@ -64,18 +64,17 @@ public class LoginController {
 			System.out.println("member --- #headers# "+headers);
 	
 			//요청 url
-			url = "http://localhost:8007/service/auth";
+			url = "http://localhost:8007/api/user";
 			
 			MultiValueMap<String, String> map= new LinkedMultiValueMap<String, String>();
-			map.add("id", id);
-			map.add("pwd", pwd);
+			map.add("mbId", mbId);
+			map.add("mbPwd", mbPwd);
 
 			HttpEntity<MultiValueMap<String,String>> entity = new HttpEntity<MultiValueMap<String, String>>(map, headers);
 			System.out.println("member --- #entity# "+entity);
-			//ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.POST, entity, String.class);
-			ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.POST, entity, String.class);
-			//response
-			//응답데이터 가져오기
+			
+			ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.GET, entity, String.class);
+			//response 응답데이터 가져오기
 			responseDtl = response.getBody();
 			System.out.println("----- 응답 DATA ----- "+responseDtl);
 			
@@ -112,11 +111,13 @@ public class LoginController {
     public ModelAndView RegisterAPI(
     			ModelAndView mv,
     			String url,
-    			String id_reg,
-    			String pwd_reg,
-    			String name,
-    			String rrno,
-    			String gender,
+    			String mbId,
+    			String mbPwd,
+    			String mbNm,
+    			String mbRrno,
+    			String mbGender,
+    			String mbType,
+    			String mbDelyn,
     			RestTemplate restTemplate,
     			RedirectAttributes redirectAttributes,
     			@RequestBody String msg
@@ -124,8 +125,8 @@ public class LoginController {
     	String responseDtl = null;
 
     	System.out.println("member --- msg@@@@@@@@@@@@@@@@@ : "+msg);
-    	
     	System.out.println("member --- Register, API로 요청");
+    	
     	// API 데이터 요청 및 응답
 		try {
 			HttpHeaders headers = new HttpHeaders();
@@ -135,14 +136,16 @@ public class LoginController {
 			System.out.println("member --- #headers# "+headers);
 	
 			//요청 url
-			url = "http://localhost:8007/service/register";
+			url = "http://localhost:8007/api/user";
 			
 			MultiValueMap<String, String> map= new LinkedMultiValueMap<String, String>();
-			map.add("id", id_reg);
-			map.add("pwd", pwd_reg);
-			map.add("name", name);
-			map.add("rrno", rrno);
-			map.add("gender", gender);
+			map.add("mbId", mbId);
+			map.add("mbPwd", mbPwd);
+			map.add("mbNm", mbNm);
+			map.add("mbRrno", mbRrno);
+			map.add("mbGender", mbGender);
+			map.add("mbType", mbType);
+			map.add("mbDelyn", mbDelyn);
 
 			HttpEntity<MultiValueMap<String,String>> entity = new HttpEntity<MultiValueMap<String, String>>(map, headers);
 			System.out.println("member --- #entity# "+entity);
@@ -159,14 +162,12 @@ public class LoginController {
 			
 			// 요청에 대한 데이터 실패값 : no_data
 			if(responseDtl.equals("no_data")) {
-				redirectAttributes.addFlashAttribute( "msg", "아이디 또는 비밀번호를 확인해주세요." );
 				redirectAttributes.addFlashAttribute( "loginRslt", "fail" );
 				return new ModelAndView("redirect:/index");
 			} else if(responseDtl.equals("error")) {
 				redirectAttributes.addFlashAttribute( "loginRslt", "error" );
 				return new ModelAndView("redirect:/index");
 			} else {
-				redirectAttributes.addFlashAttribute( "token", responseDtl );
 				redirectAttributes.addFlashAttribute( "loginRslt", "success" );
 				return new ModelAndView("redirect:/index");
 			}

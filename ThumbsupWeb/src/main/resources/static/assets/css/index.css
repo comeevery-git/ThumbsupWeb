@@ -1,5 +1,28 @@
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic|Roboto+Slab:400,700");
+
+/*
+	Googel Fonts Start
+*/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Do+Hyeon&family=Jua&family=Gugi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nanum+Gothic+Coding&display=swap');
+/*
+	Googel Fonts End
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 	Editorial by HTML5 UP
 	html5up.net | @ajlkn
@@ -1008,7 +1031,7 @@ header.main > :last-child {
 
 /* Form */
 form {
-  margin: 0 0 2em 0; }
+  margin: 0 0 0em 0; }
 
 label {
   color: #3d4449;
@@ -1038,7 +1061,9 @@ textarea {
   outline: 0;
   padding: 0 1em;
   text-decoration: none;
-  width: 100%; }
+  width: 100%;
+  font-size: 0.9rem;
+  }
   input[type="text"]:invalid,
   input[type="password"]:invalid,
   input[type="email"]:invalid,
@@ -1057,7 +1082,9 @@ textarea {
   select:focus,
   textarea:focus {
     border-color: #f56a6a;
-    box-shadow: 0 0 0 1px #f56a6a; }
+    box-shadow: 0 0 0 1px #f56a6a;
+    font-size: 1rem;
+  }
 
 select {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(210, 215, 217, 0.75)' /%3E%3C/svg%3E");
@@ -2286,7 +2313,9 @@ button,
     border: 2px solid #f56a6a;
     border-radius: 10rem;
 }
-
+button {
+	outline: none;
+}
 li a {
     border-bottom: unset;
 }
@@ -2296,14 +2325,14 @@ li a img {
     top: 1rem;
 }
 
-.iconCustom {
-	background: #f56a6a;
-    border: 1px solid #f56a6a;
-    border-radius: 2rem;
+.submitBtn {
+    width: 100%;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
 }
 
-
-/* Modal */
+/* */
+/* 로그인, 회원가입 Modal css */
 /* The Modal (background) */
         .modal {
             display: none; /* Hidden by default */
@@ -2317,25 +2346,36 @@ li a img {
             background-color: rgb(0,0,0); /* Fallback color */
             background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
         }
-    
         /* Modal Content/Box */
         .modal-content {
+		    width: 18rem;
             background-color: #fefefe;
-            margin: 15% auto; /* 15% from the top and centered */
-            padding: 20px;
-            border: 1px solid #888;
-            width: 50%; /* Could be more or less, depending on screen size */                          
+		    border: 2px solid #F1F8F3;
+		    border-radius: 5rem;                     
+		    box-shadow: 0px 1px 3px 1px #eee;
+		    margin: 15% auto;
+		    padding: 1.5rem;
         }
         /* The Close Button */
-        .close {
+        .login_close, .register_close {
             color: #aaa;
             float: right;
-            font-size: 28px;
+            font-size: 2rem !important;
             font-weight: bold;
         }
-        .close:hover,
-        .close:focus {
+        .login_close:hover, .register_close:hover,
+        .login_close:focus, .register_close:focus {
             color: black;
             text-decoration: none;
             cursor: pointer;
         }
+        /* modal span */
+        .modal-content span {
+		    font-size: 1.1rem;
+		    /* font-family: 'Black Han Sans', sans-serif; */
+		    font-family: 'Do Hyeon', sans-serif;
+		}
+		.modal-content input {
+		    margin-bottom: 0.5rem;
+		    margin-top: -0.2rem;
+		}

@@ -9,8 +9,23 @@
 		<title>Thumbs up!</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	    <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+	    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
+	    <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
+   
 		<link rel="stylesheet" href="resources/assets/css/index.css" />
 	</head>
+		
+	<script  th:inline="javascript">
+		/*<![CDATA[*/
+		$(function(){
+			var msg = [[${loginRslt}]];
+			if(msg == "success")
+				swal("가입이 완료되었습니다.");
+		});
+		/*]]>*/
+	</script>
+	
 	<body class="is-preload">
 
 		<!-- Wrapper -->
@@ -37,7 +52,7 @@
 										<!-- 회원가입 -->
 										<li>
 											<a href="#">
-												<img id="register_btn" class="iconCustom" src="resources/assets/icon/icons8-add-user-64.png"/>
+												<button id="register_btn"><span>JOIN IN</span></button>
 											</a>
 										</li>
 										<!-- 로그인 -->
@@ -60,14 +75,19 @@
 							    <div id="myLoginModal" class="modal">
 							      <!-- Modal content -->
 							      <div class="modal-content">
-							        <span class="close">&times;</span>                                                               
+							      	<!-- 닫기 -->
+							        <p>
+							        	<span class="login_close">&times;</span>
+							        </p>
+							        <!-- 로그인 form -->                                                 
 								    <form th:action="@{/login/userLogin}" action="#" id="login_form" method="POST" onsubmit="return loginChk()" style="display:block;">
 										<div id="login_div" class="col-md-12 col-sm-12 col-xs-12">
-											<h2>ID&nbsp;&nbsp;&nbsp;&nbsp;<input type="email" name="id" id="userId" value="" /></h2>
+											<span>아이디<input type="email" name="id" id="userId" value="" /></span>
 										</div>
 										<div id="login_div" class="col-md-12 col-sm-12 col-xs-12">
-											<h2>PWD<input type="password" name="pwd" id="userPwd" value="" /></h2>
+											<span>비밀번호<input type="password" name="pwd" id="userPwd" value="" /></span>
 										</div>
+										<button class="submitBtn" type="submit">Login</button>
 									</form>
 							      </div>
 							    </div>
@@ -76,24 +96,28 @@
 							    <div id="myRegisterModal" class="modal">
 							      <!-- Modal content -->
 							      <div class="modal-content">
-							        <span class="close">&times;</span>                                                               
+							      	<!-- 닫기 -->
+							      	<p>
+							        	<span class="register_close">&times;</span>
+							        </p>
+							        <!-- 회원가입 form -->                                                              
 									<form th:action="@{/login/userRegister}" action="#" id="register_form" method="POST" onsubmit="return registerChk()">
 										<div id="login_div" class="col-md-12 col-sm-12 col-xs-12">
-											<h2>ID&nbsp;&nbsp;&nbsp;&nbsp;<input type="email" name="id_reg" id="userId_reg" value="" /></h2>
+											<span>아이디<input type="email" name="mbId" id="userId_reg" value="" /></span>
 										</div>
 										<div id="login_div" class="col-md-12 col-sm-12 col-xs-12">
-											<h2>PWD<input type="password" name="pwd_reg" id="userPwd_reg" value="" /></h2>
+											<span>비밀번호<input type="password" name="mbPwd" id="userPwd_reg" value="" /></span>
 										</div>
 										<div id="login_div" class="col-md-12 col-sm-12 col-xs-12">
-											<h2>닉네임<input type="text" name="name" id="userName" value="" /></h2>
+											<span>닉네임<input type="text" name="mbNm" id="userName" value="" /></span>
 										</div>
 										<div id="login_div" class="col-md-12 col-sm-12 col-xs-12">
-											<h2>생년월일<input type="text" name="rrno" id="userRrno" value="" /></h2>
+											<span>생년월일<input type="text" name="mbRrno" id="userRrno" value="" /></span>
 										</div>
 										<div id="login_div" class="col-md-12 col-sm-12 col-xs-12">
-											<h2>성별<input type="text" name="gender" id="userGender" value="" /></h2>
+											<span>성별<input type="text" name="mbGender" id="userGender" value="" /></span>
 										</div>
-										<button id="register_btn" type="submit"><span>Register</span></button>
+										<button class="submitBtn" type="submit">JOIN US</button>
 									</form>
 							      </div>
 							    </div> 
@@ -290,11 +314,17 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="resources/assets/js/jquery.min.js"></script>
 			<script src="resources/assets/js/browser.min.js"></script>
 			<script src="resources/assets/js/breakpoints.min.js"></script>
 			<script src="resources/assets/js/util.js"></script>
 			<script src="resources/assets/js/index.js"></script>
+			
+			<!-- JQury from Google CDN -->
+		    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		    <!-- Sweet Alert -->
+		    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		    <!-- Bootstrap -->
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
 
 	</body>
 </html>
