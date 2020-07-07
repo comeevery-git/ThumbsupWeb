@@ -135,11 +135,11 @@ a {
   -ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
   border-bottom: dotted 1px;
-  color: #f56a6a;
+  color: #D6596F;
   text-decoration: none; }
   a:hover {
-    border-bottom-color: #f56a6a;
-    color: #f56a6a !important; }
+    border-bottom-color: #D6596F;
+    color: #D6596F !important; }
     a:hover strong {
       color: inherit; }
 
@@ -1021,7 +1021,7 @@ header p {
   text-transform: uppercase; }
 
 header.major > :last-child {
-  border-bottom: solid 3px #f56a6a;
+  border-bottom: solid 3px #D6596F;
   display: inline-block;
   margin: 0 0 2em 0;
   padding: 0 0.75em 0.5em 0; }
@@ -1081,8 +1081,8 @@ textarea {
   input[type="url"]:focus,
   select:focus,
   textarea:focus {
-    border-color: #f56a6a;
-    box-shadow: 0 0 0 1px #f56a6a;
+    border-color: #D6596F;
+    box-shadow: 0 0 0 1px #D6596F;
     font-size: 1rem;
   }
 
@@ -1172,8 +1172,8 @@ input[type="radio"] {
     content: '\f00c'; }
   input[type="checkbox"]:focus + label:before,
   input[type="radio"]:focus + label:before {
-    border-color: #f56a6a;
-    box-shadow: 0 0 0 1px #f56a6a; }
+    border-color: #D6596F;
+    box-shadow: 0 0 0 1px #D6596F; }
 
 input[type="checkbox"] + label:before {
   border-radius: 0.375em; }
@@ -1403,7 +1403,7 @@ ul.contact {
       font-family: 'Font Awesome 5 Free';
       font-weight: 400; }
     ul.contact li:before {
-      color: #f56a6a;
+      color: #D6596F;
       display: inline-block;
       font-size: 1.5em;
       height: 1.125em;
@@ -1448,7 +1448,7 @@ ul.pagination {
       padding: 0 0.5em;
       text-align: center; }
       ul.pagination li > .page.active {
-        background-color: #f56a6a;
+        background-color: #D6596F;
         color: #ffffff !important; }
         ul.pagination li > .page.active:hover {
           background-color: #f67878; }
@@ -1522,8 +1522,8 @@ button,
   background-color: transparent;
   border-radius: 0.375em;
   border: 0;
-  box-shadow: inset 0 0 0 2px #f56a6a;
-  color: #f56a6a !important;
+  box-shadow: inset 0 0 0 2px #D6596F;
+  color: #D6596F !important;
   cursor: pointer;
   display: inline-block;
   font-family: "Roboto Slab", serif;
@@ -1580,7 +1580,7 @@ button,
   input[type="button"].primary,
   button.primary,
   .button.primary {
-    background-color: #f56a6a;
+    background-color: #D6596F;
     box-shadow: none;
     color: #ffffff !important; }
     input[type="submit"].primary:hover,
@@ -1669,7 +1669,7 @@ button,
       text-align: center;
       width: 10em; }
       .features article .icon:before {
-        color: #f56a6a;
+        color: #D6596F;
         font-size: 2.75rem;
         position: relative;
         top: 0.05em; }
@@ -2102,7 +2102,7 @@ button,
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
-  border-bottom: solid 5px #f56a6a;
+  border-bottom: solid 5px #D6596F;
   padding: 6em 0 1em 0;
   position: relative; }
   #header > * {
@@ -2241,7 +2241,7 @@ button,
     font-size: 0.9em;
     padding: 0.625em 0; }
     #menu ul a:hover, #menu ul span:hover {
-      color: #f56a6a; }
+      color: #D6596F; }
     #menu ul a.opener, #menu ul span.opener {
       -moz-transition: color 0.2s ease-in-out;
       -webkit-transition: color 0.2s ease-in-out;
@@ -2271,7 +2271,7 @@ button,
         position: absolute;
         right: 0; }
       #menu ul a.opener:hover:before, #menu ul span.opener:hover:before {
-        color: #f56a6a; }
+        color: #D6596F; }
       #menu ul a.opener.active + ul, #menu ul span.opener.active + ul {
         display: block; }
       #menu ul a.opener.active:before, #menu ul span.opener.active:before {
@@ -2310,7 +2310,7 @@ button,
 
 #innder_contentsBox {
 	padding: 3rem;
-    border: 2px solid #f56a6a;
+    border: 2px solid #D6596F;
     border-radius: 10rem;
 }
 button {
@@ -2379,3 +2379,10 @@ li a img {
 		    margin-bottom: 0.5rem;
 		    margin-top: -0.2rem;
 		}
+
+		
+		/* swal button css */
+		.swal-button {
+			background-color: #ffffff;
+		}
+		

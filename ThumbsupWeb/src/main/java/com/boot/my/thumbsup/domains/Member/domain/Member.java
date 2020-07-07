@@ -19,10 +19,6 @@ public class Member {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
    private Integer mbIdx;
 
-    // 사용자유형 
-	@Column(length = 100)
-    private String mbType;
-
     // 아이디 
 	@Column(length = 100)
     private String mbId;
