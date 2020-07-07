@@ -84,8 +84,8 @@ public class LoginController {
 		//token 세팅
 		HttpSession session = request.getSession();
 		session.setAttribute("token", data);
-System.out.println(session);
-System.out.println(session.getAttribute("token"));
+		System.out.println(session);
+		System.out.println(session.getAttribute("token"));
 
 
 		// 응답 상태에 따른 처리

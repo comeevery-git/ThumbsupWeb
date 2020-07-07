@@ -1,6 +1,8 @@
 package com.boot.my.thumbsup.domains.Member.controller;
 
-import org.springframework.http.HttpHeaders;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,12 +22,15 @@ public class MemberController {
     }
 	
 	@GetMapping("/index")
-    public String index(Model model, @RequestHeader HttpHeaders header) {
-		System.out.println(header);
+    public String index(Model model, HttpServletRequest request) {
+		
 		//token 확인
-		if(header.get("token") != null) {
-			System.out.println("ㅇ"+header.get("token"));
+		HttpSession session = request.getSession();
+		if(session.getAttribute("token") != null) {
+			System.out.println("###"+session.getAttribute("token"));
 			
+		} else {
+			System.out.println("NOT TOKEN");
 		}
 		
     	return "index";

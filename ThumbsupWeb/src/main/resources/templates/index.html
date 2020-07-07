@@ -23,18 +23,17 @@
 			var msg = [[${msg}]];
 			
 			//로그인 성공 시
-			if(loginRslt == "success_login"){
+			if(loginRslt == "success_login")
 				console.log(msg);
-				document.getElementById('login_btn').style.display = "none";
-				document.getElementById('register_btn').style.display = "none";
-				
 			//회원가입 성공 시
-			} else if(loginRslt == "success_reg"){
+			else if(loginRslt == "success_reg")
 				console.log(msg);
-				
-			}
 		});
 		/*]]>*/
+		
+		function logout(){
+			session.removeAttribute("token");
+		}
 	</script>
 	
 	<body class="is-preload">
@@ -60,26 +59,32 @@
 											</a>
 										</li>
 										 -->
+										<!-- 마이페이지 -->
+										<li th:if="${session.token != null}">
+											<a href="#">
+												<button id="mypage_btn">MY PAGE</button>
+											</a>
+										</li>
+										<!-- 로그아웃 -->
+										<li th:if="${session.token != null}">
+											<a href="#">
+												<button id="logout_btn" onclick="logout()">Logout</button>
+											</a>
+										</li>
 										<!-- 회원가입 -->
-										<li>
+										<li th:if="${session.token == null}">
 											<a href="#">
 												<button id="register_btn"><span>JOIN IN</span></button>
 											</a>
 										</li>
 										<!-- 로그인 -->
-										<li>
+										<li th:if="${session.token == null}">
 											<a href="#">
-												<button id="login_btn"><span>Login</span></button>
+												<button id="login_btn"><span>LOGIN</span></button>
 											</a>
 										</li>
-										<!-- 로그아웃
-										<li>
-											<a href="#">
-												<img src="resources/assets/icon/icons8-shutdown-40.png"/>
-											</a>
-										</li>
-										 -->
 									</ul>
+<!-- 									<img src="resources/assets/icon/icons8-shutdown-40.png"/> -->
 								</header>
 								
 							    <!-- The Modal (Login) -->
