@@ -29,11 +29,12 @@
 			else if(loginRslt == "success_reg")
 				console.log(msg);
 		});
-		/*]]>*/
 		
 		function logout(){
-			session.removeAttribute("token");
+			location.href="/login/logout";
+			
 		}
+		/*]]>*/
 	</script>
 	
 	<body class="is-preload">
@@ -47,7 +48,35 @@
 							<!-- Header -->
 								<header id="header">
 									<a href="index.html" class="logo"><strong>Thumbs up!</strong> by Suhee</a>
-									<ul class="icons">
+									
+									<ul class="icons" th:if="${session.token != null}">
+										<!-- 마이페이지 -->
+										<li>
+											<a href="#">
+												<button id="mypage_btn">MY PAGE</button>
+											</a>
+										</li>
+										<!-- 로그아웃 -->
+										<li>
+											<a href="#">
+												<button id="logout_btn" th:onclick="logout()">Logout</button>
+											</a>
+										</li>
+									</ul>
+									<ul class="icons" th:if="${session.token == null}">
+										<!-- 회원가입 -->
+										<li>
+											<a href="#">
+												<button id="register_btn"><span>JOIN IN</span></button>
+											</a>
+										</li>
+										<!-- 로그인 -->
+										<li>
+											<a href="#">
+												<button id="login_btn"><span>LOGIN</span></button>
+											</a>
+										</li>
+									</ul>
 										<!-- 
 										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
@@ -59,31 +88,6 @@
 											</a>
 										</li>
 										 -->
-										<!-- 마이페이지 -->
-										<li th:if="${session.token != null}">
-											<a href="#">
-												<button id="mypage_btn">MY PAGE</button>
-											</a>
-										</li>
-										<!-- 로그아웃 -->
-										<li th:if="${session.token != null}">
-											<a href="#">
-												<button id="logout_btn" onclick="logout()">Logout</button>
-											</a>
-										</li>
-										<!-- 회원가입 -->
-										<li th:if="${session.token == null}">
-											<a href="#">
-												<button id="register_btn"><span>JOIN IN</span></button>
-											</a>
-										</li>
-										<!-- 로그인 -->
-										<li th:if="${session.token == null}">
-											<a href="#">
-												<button id="login_btn"><span>LOGIN</span></button>
-											</a>
-										</li>
-									</ul>
 <!-- 									<img src="resources/assets/icon/icons8-shutdown-40.png"/> -->
 								</header>
 								

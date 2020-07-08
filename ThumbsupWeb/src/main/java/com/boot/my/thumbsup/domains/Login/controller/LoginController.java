@@ -186,7 +186,23 @@ public class LoginController {
     	return mv;
     }
     
-    
+    /*
+     * 로그아웃
+     */
+    @RequestMapping(value="/logout")
+    public String logout(
+    		HttpServletRequest request
+    		) {
+    	System.out.println("ㅎㅇ");
+    	HttpSession session = request.getSession();
+    	session.invalidate();
+    	//String token = (String) session.getAttribute("token");
+    	//System.out.println(token);
+    	
+    	return "redirect:/index";
+    }
+	
+	
     /*
      * 직원가입
      

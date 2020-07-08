@@ -5,8 +5,10 @@
         var btn = document.getElementById("login_btn");
         var span = document.getElementsByClassName("login_close")[0];                                          
  
-        btn.onclick = function() {
-            modal.style.display = "block";
+        if(btn != null){
+        	btn.onclick = function() {
+        		modal.style.display = "block";
+        	}
         }
         span.onclick = function() {
             modal.style.display = "none";
@@ -21,8 +23,10 @@
         var modal_r = document.getElementById('myRegisterModal');
         var btn_r = document.getElementById("register_btn");
         var span_r = document.getElementsByClassName("register_close")[0];                                        
-        btn_r.onclick = function() {
-            modal_r.style.display = "block";
+        if(btn != null){
+	        btn_r.onclick = function() {
+	        	modal_r.style.display = "block";
+	        }
         }
         span_r.onclick = function() {
             modal_r.style.display = "none";
