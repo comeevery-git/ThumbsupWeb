@@ -1,6 +1,8 @@
 /* Modal */
 // Get the modal
 	(function($) {
+		//$('#search_input').focus();
+		
         var modal = document.getElementById('myLoginModal');
         var btn = document.getElementById("login_btn");
         var span = document.getElementsByClassName("login_close")[0];                                          

@@ -1081,7 +1081,7 @@ textarea {
   select:focus,
   textarea:focus {
     border-color: #D6596F;
-    box-shadow: 0 0 0 1px #D6596F;
+    box-shadow: 0 0 0 2px #D6596F;
     font-size: 1rem;
   }
 
@@ -2035,6 +2035,7 @@ button,
           padding: 1.66667em;
           width: calc(100% + 3.33333em); }
       #sidebar .toggle {
+        margin-left: 1em;
         height: 6.25em;
         left: 24em;
         line-height: 6.25em;
@@ -2072,7 +2073,9 @@ button,
         width: 6em; }
         #sidebar .toggle:before {
           font-size: 1.5rem;
-          margin-left: -0.4375em; }
+          margin-left: -0.4375em;
+          margin-top: 0em;
+           }
       body.is-preload #sidebar {
         display: none; } }
   @media screen and (max-width: 736px) {
@@ -2102,7 +2105,7 @@ button,
   display: -ms-flex;
   display: flex;
   border-bottom: solid 5px #D6596F;
-  padding: 6em 0 1em 0;
+  padding: 4em 0 2em 0;
   position: relative; }
   #header > * {
     -moz-flex: 1;
@@ -2119,7 +2122,7 @@ button,
     text-align: right; }
   @media screen and (max-width: 1680px) {
     #header {
-      padding-top: 5em; } }
+      padding-top: 1.5em; } }
   @media screen and (max-width: 736px) {
     #header {
       padding-top: 6.5em; }
@@ -2384,4 +2387,69 @@ li a img {
 		.swal-button {
 			background-color: #ffffff;
 		}
+		.content span {
+			font-family: 'Nanum Gothic Coding', monospace;
+		}
+		
+		
+		/* 검색 버튼 */
+#search_form{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: all 1s;
+    width: 50px;
+    height: 50px;
+    background: white;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 4px solid white;
+    padding: 5px;
+}
+
+#search_input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 42.5px;
+    line-height: 30px;
+    outline: 0;
+    border: 0;
+    display: none;
+    font-size: 1em;
+    border-radius: 20px;
+    padding: 0 20px;
+}
+
+.fa{
+    box-sizing: border-box;
+    padding: 10px;
+    width: 42.5px;
+    height: 42.5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    color: #07051a;
+    text-align: center;
+    font-size: 1.2em;
+    transition: all 1s;
+}
+
+#search_form:hover{
+    width: 100%;
+    cursor: pointer;
+}
+
+#search_form:hover #search_input{
+    display: block;
+}
+
+#search_form:hover .fa{
+    background: whitesmoke;
+    color: #333;
+}
+		/* 검색 버튼 끝 */
 		
