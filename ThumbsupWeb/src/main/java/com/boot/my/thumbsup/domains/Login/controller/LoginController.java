@@ -113,7 +113,6 @@ public class LoginController {
     			String mbNm,
     			String mbRrno,
     			String mbGender,
-    			String mbDelyn,
     			RestTemplate restTemplate,
     			RedirectAttributes redirectAttributes,
     			@RequestBody String msg
@@ -139,7 +138,6 @@ public class LoginController {
 			map.add("mbNm", mbNm);
 			map.add("mbRrno", mbRrno);
 			map.add("mbGender", mbGender);
-			map.add("mbDelyn", mbDelyn);
 
 			HttpEntity<MultiValueMap<String,String>> entity = new HttpEntity<MultiValueMap<String, String>>(map, headers);
 			System.out.println("member --- #entity# "+entity);
