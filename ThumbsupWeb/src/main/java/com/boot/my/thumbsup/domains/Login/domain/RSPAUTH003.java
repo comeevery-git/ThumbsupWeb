@@ -9,14 +9,20 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class RSPAUTH001 implements RqsInterData{
+public class RSPAUTH003 implements RqsInterData{
 	// 결과값
 	private String success;
-
+	
+	// 결과msg
+	private String msg;
+	
 	// jwt 토큰
-	private String data;
-
-	/* idx
+	private String memberToken;
+	
+	// 회원 권한
+	private String memberRole;
+	
+	// idx
 	private Integer mbIdx;
 
     // 아이디 
@@ -52,7 +58,6 @@ public class RSPAUTH001 implements RqsInterData{
     // 마지막 접속일 
     private String mbAccessdate;
 
-	 */
     
     
     
